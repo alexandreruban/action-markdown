@@ -1,5 +1,3 @@
-require "action_markdown"
-
 module ActionMarkdown
   class Engine < ::Rails::Engine
     isolate_namespace ActionMarkdown
