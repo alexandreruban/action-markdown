@@ -3,6 +3,7 @@ PATH
   specs:
     action-markdown (0.1.0)
       rails (>= 7.0.0)
+      redcarpet
       rouge
 
 GEM
@@ -134,6 +135,7 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    redcarpet (3.5.1)
     rouge (4.0.0)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
