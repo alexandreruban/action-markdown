@@ -1,0 +1,30 @@
+name: CI
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+jobs:
+  tests:
+    strategy:
+      matrix:
+        os:
+          - "ubuntu-latest"
+        ruby-version:
+          - "3.1"
+        rails-version:
+          - "7.0"
+    env:
+      RAILS_VERSION: "${{ matrix.rails-version }}"
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+
+      - name: Run tests
+        run: bin/rails test
