@@ -1,0 +1,8 @@
+<h1>New article</h1>
+
+<%= form_with model: @article do |f| %>
+  <%= f.label :content %>
+  <%= f.text_area :content, style: "display: block;" %>
+
+  <%= f.submit "Save" %>
+<% end %>
