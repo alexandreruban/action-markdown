@@ -1,25 +1,25 @@
 module ActionMarkdown
   class Content
-    include Serialization
+    include ActiveModel::Conversion, Rendering, Serialization
 
     def initialize(body)
       @body = body
     end
 
     def to_html
-      renderer.render(body).strip
+      markdown_renderer.render(body)
     end
 
     def to_s
-      to_html
+      render partial: to_partial_path, layout: false, locals: { content: self }
     end
 
     private
 
     attr_accessor :body
 
-    def renderer
-      @renderer ||= Redcarpet::Markdown.new(
+    def markdown_renderer
+      @markdown_renderer ||= Redcarpet::Markdown.new(
         Renderer,
         no_intra_emphasis: true,
         fenced_code_blocks: true,
