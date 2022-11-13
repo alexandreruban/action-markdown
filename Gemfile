@@ -6,3 +6,4 @@ gemspec
 gem "sqlite3"
 gem "sprockets-rails"
 gem "debug"
+gem "puma"
