@@ -9,5 +9,6 @@ module ActionMarkdown
   autoload :Attribute
   autoload :Content
   autoload :Renderer
+  autoload :Rendering
   autoload :Serialization
 end
