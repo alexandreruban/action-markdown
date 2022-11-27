@@ -1,7 +1,7 @@
 require_relative "lib/action_markdown/version"
 
 Gem::Specification.new do |spec|
-  spec.name      = "action-markdown"
+  spec.name      = "action_markdown"
   spec.version   = ActionMarkdown::VERSION
   spec.authors   = ["Alexandre Ruban"]
   spec.email     = ["alexandre@hey.com"]

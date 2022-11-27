@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    action-markdown (0.1.0)
+    action_markdown (0.1.0)
       rails (>= 7.0.0)
       redcarpet
       rouge
@@ -170,7 +170,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  action-markdown!
+  action_markdown!
   debug
   puma
   sprockets-rails
