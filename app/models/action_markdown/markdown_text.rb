@@ -6,6 +6,11 @@ module ActionMarkdown
 
     belongs_to :record, polymorphic: true, touch: true
 
-    delegate :to_s, :to_html, to: :body
+    delegate :to_s, :nil?, to: :body
+    delegate :blank?, :empty?, :present?, to: :to_html
+
+    def to_html
+      body&.to_html.to_s
+    end
   end
 end
