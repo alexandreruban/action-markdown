@@ -11,7 +11,7 @@ module ActionMarkdown
         end
       CODE
 
-      has_one :"markdown_#{name}", -> { where(name: name) }, class_name: "ActionMarkdown::RichText",
+      has_one :"markdown_#{name}", -> { where(name: name) }, class_name: "ActionMarkdown::MarkdownText",
         as: :record, inverse_of: :record, autosave: true, dependent: :destroy
 
       scope :"with_markdown_#{name}", -> { includes("markdown_#{name}") }

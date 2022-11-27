@@ -1,6 +1,6 @@
 module ActionMarkdown
-  class RichText < ApplicationRecord
-    self.table_name = "action_markdown_rich_texts"
+  class MarkdownText < ApplicationRecord
+    self.table_name = "action_markdown_markdown_texts"
 
     serialize :body, ActionMarkdown::Content
 
