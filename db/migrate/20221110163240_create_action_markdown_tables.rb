@@ -3,14 +3,14 @@ class CreateActionMarkdownTables < ActiveRecord::Migration[7.0]
     # Use Active Record's configured type for primary and foreign keys
     primary_key_type, foreign_key_type = primary_and_foreign_key_types
 
-    create_table :action_markdown_rich_texts, id: primary_key_type do |t|
+    create_table :action_markdown_markdown_texts, id: primary_key_type do |t|
       t.string     :name, null: false
       t.text       :body, size: :long
       t.references :record, null: false, polymorphic: true, index: false, type: foreign_key_type
 
       t.timestamps
 
-      t.index %i[record_type record_id name], name: "index_action_markdown_rich_texts_uniqueness", unique: true
+      t.index %i[record_type record_id name], name: "index_action_markdown_markdown_texts_uniqueness", unique: true
     end
   end
 

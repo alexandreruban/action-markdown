@@ -15,7 +15,7 @@ module ActionMarkdown
           nil
         when self
           content.to_html
-        when ActionMarkdown::RichText
+        when ActionMarkdown::MarkdownText
           content.body.to_html
         else
           new(content).to_html
