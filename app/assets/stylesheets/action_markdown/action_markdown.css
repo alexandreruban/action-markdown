@@ -1,0 +1,313 @@
+.action-markdown {
+  /* Inline code variables */
+  --am-inline-code-padding-y: 0.15rem;
+  --am-inline-code-padding-x: 0.2rem;
+  --am-inline-code-border-radius: 0.375rem;
+  --am-inline-code-background: hsl(53 100% 65% / 0.2);
+
+  /* Code block paddings */
+  --am-code-padding-y: 1rem;
+  --am-code-padding-x: 1.5rem;
+
+  /* Code block border-radius */
+  --am-code-border-radius: 0.5rem;
+
+  /* Code block shadow */
+  --am-code-shadow: 1px 3px 6px hsl(0 0% 0% / 0.1);
+
+  /* Code syntax highlighting variables */
+  --am-code-background:hsl(208 95% 8%);
+  --am-code-comment:   hsl(180 9% 43%);
+  --am-code-string:    hsl(35 71% 74%);
+  --am-code-inherit:   hsl(77 67% 68%);
+  --am-code-number:    hsl(14 90% 70%);
+  --am-code-error:     hsl(357 79% 65%);
+  --am-code-constant:  hsl(221 100% 75%);
+  --am-code-keyword:   hsl(276 68% 75%);
+  --am-code-class:     hsl(33 100% 77%);
+  --am-code-variable:  hsl(169 56% 68%);
+  --am-code-text:      hsl(217 34% 88%);
+  --am-code-html:      hsl(169 47% 86%);
+}
+
+.action-markdown p code,
+.action-markdown li code {
+  color: inherit;
+  border-radius: var(--am-inline-code-border-radius);
+  background-color: var(--am-inline-code-background);
+  padding: var(--am-inline-code-padding-y) var(--am-inline-code-padding-x);
+}
+
+.action-markdown div.highlight {
+  overflow: auto;
+  background-color: var(--am-code-background);
+  border-radius: var(--am-code-border-radius);
+  box-shadow: var(--am-code-shadow);
+}
+
+.action-markdown pre.highlight {
+  margin: 0;
+  float: left;
+  padding: var(--am-code-padding-y) var(--am-code-padding-x);
+}
+
+.action-markdown .highlight code {
+  color: var(--am-code-text);
+}
+
+.action-markdown .highlight .cm {
+  color: var(--am-code-comment);
+}
+
+.action-markdown .highlight .p {
+  color: var(--am-code-comment);
+}
+
+.action-markdown .highlight .cp {
+  color: var(--am-code-error);
+}
+
+.action-markdown .highlight .c1 {
+  color: var(--am-code-comment);
+}
+
+.action-markdown .highlight .cs {
+  color: var(--am-code-comment);
+}
+
+.action-markdown .highlight .c,
+.action-markdown .highlight .ch,
+.action-markdown .highlight .cd,
+.action-markdown .highlight .cpf {
+  color: var(--am-code-comment);
+}
+
+.action-markdown .highlight .err {
+  color: var(--am-code-keyword);
+}
+
+.action-markdown .highlight .gd {
+  color: var(--am-code-keyword);
+}
+
+.action-markdown .highlight .ge {
+  color: var(--am-code-keyword);
+}
+
+.action-markdown .highlight .gr {
+  color: var(--am-code-error);
+}
+
+.action-markdown .highlight .gh {
+  color: var(--am-code-comment);
+}
+
+.action-markdown .highlight .gi {
+  color: var(--am-code-keyword);
+}
+
+.action-markdown .highlight .go {
+  color: var(--am-code-comment);
+}
+
+.action-markdown .highlight .gp {
+  color: var(--am-code-comment);
+}
+
+.action-markdown .highlight .gu {
+  color: var(--am-code-comment);
+}
+
+.action-markdown .highlight .gt {
+  color: var(--am-code-error);
+}
+.action-markdown .highlight .kc {
+  color: var(--am-code-keyword);
+}
+
+.action-markdown .highlight .kd {
+  color: var(--am-code-keyword);
+}
+
+.action-markdown .highlight .kn {
+  color: var(--am-code-keyword);
+}
+
+.action-markdown .highlight .kp {
+  color: var(--am-code-keyword);
+}
+
+.action-markdown .highlight .kr {
+  color: var(--am-code-keyword);
+}
+
+.action-markdown .highlight .kt {
+  color: var(--am-code-class);
+}
+
+.action-markdown .highlight .k,
+.action-markdown .highlight .kv {
+  color: var(--am-code-keyword);
+}
+
+.action-markdown .highlight .mf {
+  color: var(--am-code-number);
+}
+
+.action-markdown .highlight .mh {
+  color: var(--am-code-number);
+}
+
+.action-markdown .highlight .il {
+  color: var(--am-code-number);
+}
+
+.action-markdown .highlight .mi {
+  color: var(--am-code-number);
+}
+
+.action-markdown .highlight .mo {
+  color: var(--am-code-number);
+}
+
+.action-markdown .highlight .m,
+.action-markdown .highlight .mb,
+.action-markdown .highlight .mx {
+  color: var(--am-code-number);
+}
+
+.action-markdown .highlight .sa {
+  color: var(--am-code-keyword);
+}
+
+.action-markdown .highlight .sb {
+  color: var(--am-code-string);
+}
+
+.action-markdown .highlight .sc {
+  color: var(--am-code-string);
+}
+
+.action-markdown .highlight .sd {
+  color: var(--am-code-string);
+}
+
+.action-markdown .highlight .s2 {
+  color: var(--am-code-string);
+}
+
+.action-markdown .highlight .se {
+  color: var(--am-code-string);
+}
+
+.action-markdown .highlight .sh {
+  color: var(--am-code-string);
+}
+
+.action-markdown .highlight .si {
+  color: var(--am-code-string);
+}
+
+.action-markdown .highlight .sx {
+  color: var(--am-code-string);
+}
+
+.action-markdown .highlight .sr {
+  color: var(--am-code-inherit);
+}
+
+.action-markdown .highlight .s1 {
+  color: var(--am-code-string);
+}
+
+.action-markdown .highlight .ss {
+  color: var(--am-code-variable);
+}
+
+.action-markdown .highlight .s,
+.action-markdown .highlight .dl {
+  color: var(--am-code-string);
+}
+
+.action-markdown .highlight .na {
+  color: var(--am-code-inherit);
+}
+
+.action-markdown .highlight .bp {
+  color: var(--am-code-comment);
+}
+
+.action-markdown .highlight .nb {
+  color: var(--am-code-text);
+}
+
+.action-markdown .highlight .nc {
+  color: var(--am-code-class);
+}
+
+.action-markdown .highlight .no {
+  color: var(--am-code-inherit);
+}
+
+.action-markdown .highlight .nd {
+  color: var(--am-code-keyword);
+}
+
+.action-markdown .highlight .ni {
+  color: var(--am-code-constant);
+}
+
+.action-markdown .highlight .ne {
+  color: var(--am-code-constant);
+}
+
+.action-markdown .highlight .nf,
+.action-markdown .highlight .fm {
+  color: var(--am-code-constant);
+}
+
+.action-markdown .highlight .nl {
+  color: var(--am-code-constant);
+}
+
+.action-markdown .highlight .nn {
+  color: var(--am-code-inherit);
+}
+
+.action-markdown .highlight .nt {
+  color: var(--am-code-html);
+}
+
+.action-markdown .highlight .n,
+.action-markdown .highlight .p {
+  color: var(--am-code-text);
+}
+
+.action-markdown .highlight .vc {
+  color: var(--am-code-inherit);
+}
+
+.action-markdown .highlight .vg {
+  color: var(--am-code-inherit);
+}
+
+.action-markdown .highlight .vi {
+  color: var(--am-code-inherit);
+}
+
+.action-markdown .highlight .nv,
+.action-markdown .highlight .vm {
+  color: var(--am-code-inherit);
+}
+
+.action-markdown .highlight .ow {
+  color: var(--am-code-keyword);
+}
+
+.action-markdown .highlight .o {
+  color: var(--am-code-keyword);
+}
+
+.action-markdown .highlight .w {
+  color: var(--am-code-comment);
+}

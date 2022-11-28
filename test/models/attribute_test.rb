@@ -4,7 +4,7 @@ class ActionMarkdown::AttributeTest < ActionView::TestCase
   test "Instantiating an article with Markdown content converts it to HML" do
     article = Article.new content: "# Title"
 
-    assert_dom_equal %q(<h1>Title</h1>), article.content.to_s.strip
+    assert_dom_equal %q(<div class="action-markdown"> <h1>Title</h1> </div>), article.content.to_s.squish
   end
 
   test "Instanciating an article without Markdown content returns an empty string" do
@@ -14,7 +14,7 @@ class ActionMarkdown::AttributeTest < ActionView::TestCase
   test "Creating an article with Markdown content converts it to HML" do
     article = Article.create! content: "# Title"
 
-    assert_dom_equal %q(<h1>Title</h1>), article.content.to_s.strip
+    assert_dom_equal %q(<div class="action-markdown"> <h1>Title</h1> </div>), article.content.to_s.squish
   end
 
   test "Creating an article without Markdown content returns an empty string" do
