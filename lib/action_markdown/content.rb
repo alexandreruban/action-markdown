@@ -6,6 +6,10 @@ module ActionMarkdown
       @body = body
     end
 
+    def to_markdown
+      body
+    end
+
     def to_html
       markdown_renderer.render(body)
     end

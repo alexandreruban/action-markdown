@@ -17,6 +17,12 @@ class ActionMarkdown::AttributeTest < ActionView::TestCase
     assert_dom_equal %q(<div class="action-markdown"> <h1>Title</h1> </div>), article.content.to_s.squish
   end
 
+  test "Creating an article saves Markdown text in the database" do
+    article = Article.create! content: "# Title"
+
+    assert_equal "# Title", article.content.body.to_markdown
+  end
+
   test "Creating an article without Markdown content returns an empty string" do
     assert_dom_equal "", Article.create!.content.to_s.strip
   end

@@ -14,11 +14,11 @@ module ActionMarkdown
         when nil
           nil
         when self
-          content.to_html
+          content.to_markdown
         when ActionMarkdown::MarkdownText
-          content.body.to_html
+          content.body.to_markdown
         else
-          new(content).to_html
+          new(content).to_markdown
         end
       end
     end
