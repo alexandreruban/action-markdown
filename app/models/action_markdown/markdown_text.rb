@@ -7,6 +7,7 @@ module ActionMarkdown
     belongs_to :record, polymorphic: true, touch: true
 
     delegate :to_s, :nil?, to: :body
+    delegate :to_markdown, to: :body, allow_nil: true
     delegate :blank?, :empty?, :present?, to: :to_html
 
     def to_html

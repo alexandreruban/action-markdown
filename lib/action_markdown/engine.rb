@@ -7,5 +7,11 @@ module ActionMarkdown
         extend ActionMarkdown::Attribute
       end
     end
+
+    initializer "action_markdown.helper" do
+      ActiveSupport.on_load(:action_controller_base) do
+        helper ActionMarkdown::Engine.helpers
+      end
+    end
   end
 end
