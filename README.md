@@ -63,6 +63,17 @@ In the view above, the Markdown content will automatically be converted to the f
 <p>This is a paragraph.</p>
 ```
 
+**Note**: To use a Markdown fields in forms, we should use the `markdown_field` helper like in the following example:
+
+```erb
+<%= form_with model: article do |f| %>
+  <%= f.label :content %>
+  <%= f.markdown_field :content %>
+
+  <%= f.submit "Save" %>
+<% end %>
+```
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
