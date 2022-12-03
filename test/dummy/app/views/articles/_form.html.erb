@@ -1,0 +1,6 @@
+<%= form_with model: article do |f| %>
+  <%= f.label :content %>
+  <%= f.markdown_field :content, style: "display: block;" %>
+
+  <%= f.submit "Save" %>
+<% end %>
