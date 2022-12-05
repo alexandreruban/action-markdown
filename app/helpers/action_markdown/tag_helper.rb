@@ -2,10 +2,27 @@ require "action_view/helpers/tags/placeholderable"
 
 module ActionMarkdown
   module TagHelper
+    cattr_accessor(:id, instance_accessor: false) { 0 }
+
     def markdown_field_tag(name, value = nil, options = {})
       options = options.symbolize_keys
 
-      content_tag("textarea", value, options)
+      options[:id] ||= "action_markdown_input_#{ActionMarkdown::TagHelper.id += 1}"
+
+      toolbar = tag.markdown_toolbar for: options[:id] do
+        concat tag.md_bold "Bold"
+        concat tag.md_header "Header"
+        concat tag.md_italic "Italic"
+        concat tag.md_quote "Quote"
+        concat tag.md_code "Code"
+        concat tag.md_link "Link"
+        concat tag.md_image "Image"
+        concat tag.md_unordered_list "Unordered list"
+        concat tag.md_ordered_list "Ordered list"
+      end
+      textarea = content_tag("textarea", value, options)
+
+      toolbar + textarea
     end
   end
 end

@@ -32,7 +32,8 @@ class ActionMarkdown::FormHelperTest < ActionView::TestCase
 
     assert_dom_equal \
       '<form action="/articles" accept-charset="UTF-8" method="post">' \
-        '<textarea>' \
+        + toolbar_html(id: "action_markdown_input_1") + \
+        '<textarea id="action_markdown_input_1">' \
           ' ' \
         '</textarea>' \
       '</form>',
@@ -46,6 +47,7 @@ class ActionMarkdown::FormHelperTest < ActionView::TestCase
 
     assert_dom_equal \
       '<form action="/articles" accept-charset="UTF-8" method="post">' \
+        + toolbar_html(id: "article_content") + \
         '<textarea name="article[content]" id="article_content">' \
           ' ' \
         '</textarea>' \
@@ -60,6 +62,7 @@ class ActionMarkdown::FormHelperTest < ActionView::TestCase
 
     assert_dom_equal \
       '<form action="/articles" accept-charset="UTF-8" method="post">' \
+        + toolbar_html(id: "article_content") + \
         '<textarea name="article[content]" id="article_content" class="custom-class">' \
           ' ' \
         '</textarea>' \
@@ -74,6 +77,7 @@ class ActionMarkdown::FormHelperTest < ActionView::TestCase
 
     assert_dom_equal \
       '<form action="/articles" accept-charset="UTF-8" method="post">' \
+        + toolbar_html(id: "article_not_an_attribute") + \
         '<textarea name="article[not_an_attribute]" id="article_not_an_attribute">' \
           ' ' \
         '</textarea>' \
@@ -88,6 +92,7 @@ class ActionMarkdown::FormHelperTest < ActionView::TestCase
 
     assert_dom_equal \
       '<form action="/articles" accept-charset="UTF-8" method="post">' \
+        + toolbar_html(id: "content") + \
         '<textarea name="content" id="content">' \
           ' ' \
         '</textarea>' \
@@ -102,6 +107,7 @@ class ActionMarkdown::FormHelperTest < ActionView::TestCase
 
     assert_dom_equal \
       '<form action="/articles" accept-charset="UTF-8" method="post">' \
+        + toolbar_html(id: "article_content") + \
         '<textarea placeholder="Content" name="article[content]" id="article_content">' \
           ' ' \
         '</textarea>' \
@@ -118,6 +124,7 @@ class ActionMarkdown::FormHelperTest < ActionView::TestCase
 
     assert_dom_equal \
       '<form action="/articles" accept-charset="UTF-8" method="post">' \
+        + toolbar_html(id: "article_content") + \
         '<textarea placeholder="Article content" name="article[content]" id="article_content">' \
           ' ' \
         '</textarea>' \
@@ -132,10 +139,27 @@ class ActionMarkdown::FormHelperTest < ActionView::TestCase
 
     assert_dom_equal \
       '<form action="/articles" accept-charset="UTF-8" method="post">' \
+        + toolbar_html(id: "article_content") + \
         '<textarea name="article[content]" id="article_content">' \
           ' # Title' \
         '</textarea>' \
       '</form>',
     output_buffer.squish
+  end
+
+  private
+
+  def toolbar_html(id:)
+    %Q(<markdown-toolbar for="#{id}">) \
+      '<md-bold>Bold</md-bold>' \
+      '<md-header>Header</md-header>' \
+      '<md-italic>Italic</md-italic>' \
+      '<md-quote>Quote</md-quote>' \
+      '<md-code>Code</md-code>' \
+      '<md-link>Link</md-link>' \
+      '<md-image>Image</md-image>' \
+      '<md-unordered-list>Unordered list</md-unordered-list>' \
+      '<md-ordered-list>Ordered list</md-ordered-list>' \
+    '</markdown-toolbar>'
   end
 end
