@@ -17,3 +17,8 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
+
+.action-markdown-toolbar {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}

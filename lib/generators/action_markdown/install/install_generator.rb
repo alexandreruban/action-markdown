@@ -14,6 +14,11 @@ module ActionMarkdown
         )
 
         copy_file(
+          "app/assets/stylesheets/action_markdown/action_markdown_toolbar.css",
+          "app/assets/stylesheets/action_markdown_toolbar.css"
+        )
+
+        copy_file(
           "app/views/action_markdown/contents/_content.html.erb",
           "app/views/action_markdown/contents/_content.html.erb"
         )

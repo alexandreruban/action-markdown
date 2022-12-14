@@ -7,6 +7,7 @@ module ActionMarkdown
     def markdown_field_tag(name, value = nil, options = {})
       options = options.symbolize_keys
       options[:id] ||= "action_markdown_input_#{ActionMarkdown::TagHelper.id += 1}"
+      options[:class] ||= "action-markdown-input"
 
       markdown_toolbar(id: options[:id]) + content_tag("textarea", value, options)
     end
