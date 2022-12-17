@@ -1,0 +1,42 @@
+.action-markdown-toolbar {
+  /* Colors */
+  --am-toolbar-background: hsl(0, 0%, 95%);
+  --am-toolbar-item-hover: hsl(0, 0%, 85%);
+  --am-toolbar-item-color: hsl(0, 0%, 15%);
+
+  /* Spaces */
+  --am-toolbar-gap: 0.5rem;
+  --am-toolbar-padding: 0.25rem;
+  --am-toolbar-border-radius: 0.25rem;
+  --am-toolbar-item-border-radius: 0.125rem;
+
+  /* Actual styles */
+  display: flex;
+  gap: var(--am-toolbar-gap);
+
+  background-color: var(--am-toolbar-background);
+  border-radius: var(--am-toolbar-border-radius);
+  padding: var(--am-toolbar-padding);
+  overflow: auto;
+}
+
+.action-markdown-toolbar > * {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: var(--am-toolbar-item-border-radius);
+  padding: var(--am-toolbar-padding);
+}
+
+.action-markdown-toolbar > *:hover {
+  background-color: var(--am-toolbar-item-hover);
+}
+
+.action-markdown-toolbar svg {
+  fill: var(--am-toolbar-item-color);
+}
+
+.action-markdown-input {
+  max-width: 100%;
+  min-width: 100%;
+}
