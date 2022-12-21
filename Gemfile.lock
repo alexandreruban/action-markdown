@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     action_markdown (0.1.3)
+      liquid
       rails (>= 7.0.0)
       redcarpet
       rouge
@@ -91,6 +92,7 @@ GEM
     io-console (0.5.11)
     irb (1.4.2)
       reline (>= 0.3.0)
+    liquid (5.4.0)
     loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)

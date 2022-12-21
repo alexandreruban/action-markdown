@@ -2,6 +2,7 @@ require "action_markdown/version"
 require "action_markdown/engine"
 
 require "redcarpet"
+require "liquid"
 require "rouge"
 
 module ActionMarkdown
